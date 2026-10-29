@@ -3,6 +3,18 @@
 ## Brief description
 An AI medical diagnosis platform where patients describe symptoms and receive disease predictions from a fine-tuned BERT model, with explainable results and separate patient and doctor dashboards.
 
+## Tech stack
+- React
+- Vite
+- Tailwind CSS
+- Node.js / Express
+- MongoDB / Mongoose
+- JWT authentication
+- Python
+- PyTorch
+- Fine-tuned BERT (Transformers)
+- SHAP / LIME (explainability)
+
 ## Project purpose
 Graduation project demonstrating full-stack engineering plus applied NLP: symptom text in, disease prediction out, with XAI-style explanations and role-based dashboards.
 
