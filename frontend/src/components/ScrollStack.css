@@ -1,0 +1,223 @@
+/* Scroll stack — GSAP pin pattern (green brand palette) */
+
+.scroll-stack {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+}
+
+.scroll-stack .scroll-stack-card {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scroll-stack .scroll-stack-card-container {
+  position: relative;
+  width: min(60%, 42rem);
+  min-height: 50%;
+  display: flex;
+  padding: 2rem;
+  border-radius: 1rem;
+  will-change: transform, opacity;
+  box-shadow: 0 20px 50px rgba(34, 168, 74, 0.12);
+  overflow: hidden;
+  isolation: isolate;
+  backface-visibility: hidden;
+}
+
+/* Light mode — solid cards */
+.scroll-stack #scroll-stack-card-1 {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.scroll-stack #scroll-stack-card-2 {
+  background-color: #166534;
+  color: #f0fdf4;
+}
+
+.scroll-stack #scroll-stack-card-3 {
+  background-color: #22a84a;
+  color: #f0fdf4;
+}
+
+.scroll-stack #scroll-stack-card-4 {
+  background-color: #f0fdf4;
+  border: 1px solid #86efac;
+}
+
+.scroll-stack #scroll-stack-card-5 {
+  background-color: #14532d;
+  color: #f0fdf4;
+}
+
+.scroll-stack #scroll-stack-card-6 {
+  background-color: #1d9340;
+  color: #f0fdf4;
+}
+
+/* Dark mode — fully opaque (prevents stacked text bleed-through) */
+.dark .scroll-stack #scroll-stack-card-1 {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f0fdf4;
+}
+
+.dark .scroll-stack #scroll-stack-card-2 {
+  background-color: #14532d;
+  border: 1px solid #166534;
+}
+
+.dark .scroll-stack #scroll-stack-card-3 {
+  background-color: #15803d;
+  border: 1px solid #22a84a;
+}
+
+.dark .scroll-stack #scroll-stack-card-4 {
+  background-color: #166534;
+  border: 1px solid #4ade80;
+  color: #f0fdf4;
+}
+
+.dark .scroll-stack #scroll-stack-card-5 {
+  background-color: #14532d;
+  border: 1px solid #22a84a;
+}
+
+.dark .scroll-stack #scroll-stack-card-6 {
+  background-color: #134e2a;
+  border: 1px solid #1d9340;
+}
+
+.scroll-stack .scroll-stack-card-content,
+.scroll-stack .scroll-stack-card-content-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-stack .scroll-stack-card-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-stack .stack-card-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 0.875rem;
+  background: #22a84a;
+  flex-shrink: 0;
+}
+
+.scroll-stack #scroll-stack-card-2 .stack-card-icon-wrapper,
+.scroll-stack #scroll-stack-card-3 .stack-card-icon-wrapper,
+.scroll-stack #scroll-stack-card-5 .stack-card-icon-wrapper,
+.scroll-stack #scroll-stack-card-6 .stack-card-icon-wrapper,
+.dark .scroll-stack #scroll-stack-card-1 .stack-card-icon-wrapper,
+.dark .scroll-stack #scroll-stack-card-4 .stack-card-icon-wrapper {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.scroll-stack .stack-card-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #ffffff;
+}
+
+.scroll-stack .stack-card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+  color: #166534;
+}
+
+.scroll-stack #scroll-stack-card-2 .stack-card-title,
+.scroll-stack #scroll-stack-card-3 .stack-card-title,
+.scroll-stack #scroll-stack-card-5 .stack-card-title,
+.scroll-stack #scroll-stack-card-6 .stack-card-title,
+.dark .scroll-stack .stack-card-title {
+  color: #f0fdf4;
+}
+
+.scroll-stack .stack-card-description {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+  color: #475569;
+  max-width: 36rem;
+}
+
+.scroll-stack #scroll-stack-card-2 .stack-card-description,
+.scroll-stack #scroll-stack-card-3 .stack-card-description,
+.scroll-stack #scroll-stack-card-5 .stack-card-description,
+.scroll-stack #scroll-stack-card-6 .stack-card-description,
+.dark .scroll-stack .stack-card-description {
+  color: rgba(240, 253, 244, 0.88);
+}
+
+@media (max-width: 1000px) {
+  .scroll-stack .scroll-stack-card-container {
+    flex-direction: column;
+    width: 90%;
+    min-height: auto;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .scroll-stack .scroll-stack-card-content-wrapper {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .scroll-stack .stack-card-title {
+    font-size: 1.375rem;
+  }
+
+  .scroll-stack .stack-card-description {
+    font-size: 0.9375rem;
+  }
+
+  .scroll-stack .scroll-stack-card {
+    height: auto;
+    min-height: 70svh;
+    padding: 1.25rem 0 0;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-stack .stack-card-title {
+    font-size: 1.25rem;
+  }
+
+  .scroll-stack .stack-card-description {
+    font-size: 0.875rem;
+  }
+
+  .scroll-stack .stack-card-icon-wrapper {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .scroll-stack .stack-card-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
